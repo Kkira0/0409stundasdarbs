@@ -19,7 +19,7 @@ class ProductController extends Controller
             'name'        => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'price'       => ['required', 'numeric', 'min:0'],
-            'status'      => ['required', 'in:active,inactive'],
+            'status'      => ['required', 'string'],
         ]);
 
         $product = Product::create($data);
@@ -37,7 +37,7 @@ class ProductController extends Controller
             'name'        => ['sometimes', 'required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'price'       => ['sometimes', 'required', 'numeric', 'min:0'],
-            'status'      => ['sometimes', 'required', 'in:active,inactive'],
+            'status'      => ['sometimes', 'required', 'string'],
         ]);
 
         $product->update($data);
