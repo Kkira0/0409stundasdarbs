@@ -10,7 +10,7 @@ class ProductController extends Controller
     public function index()
     {
         // Atgriež ar lapošanu (pielāgo 'per_page' ar ?per_page=)
-        return Product::query()->latest()->paginate(request('per_page', 15));
+        return Product::all();
     }
 
     public function store(Request $request)
